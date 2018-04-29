@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16782" started-at="2018-04-28T21:00:54Z" finished-at="2018-04-28T21:01:10Z">
+  <suite name="Default suite" duration-ms="32523" started-at="2018-04-29T23:21:00Z" finished-at="2018-04-29T23:21:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16782" started-at="2018-04-28T21:00:54Z" finished-at="2018-04-28T21:01:10Z">
+    <test name="Default test" duration-ms="32523" started-at="2018-04-29T23:21:00Z" finished-at="2018-04-29T23:21:33Z">
       <class name="tests.amazonTest.AmazonTest">
-        <test-method status="PASS" signature="setupClass()[pri:0, instance:tests.amazonTest.AmazonTest@6093dd95]" name="setupClass" is-config="true" duration-ms="23" started-at="2018-04-28T14:00:54Z" finished-at="2018-04-28T14:00:54Z">
+        <test-method status="PASS" signature="setupClass()[pri:0, instance:tests.amazonTest.AmazonTest@604ed9f0]" name="setupClass" is-config="true" duration-ms="15" started-at="2018-04-29T16:21:00Z" finished-at="2018-04-29T16:21:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupClass -->
-        <test-method status="PASS" signature="setupTest()[pri:0, instance:tests.amazonTest.AmazonTest@6093dd95]" name="setupTest" is-config="true" duration-ms="0" started-at="2018-04-28T14:00:54Z" finished-at="2018-04-28T14:00:54Z">
+        <test-method status="PASS" signature="setupTest()[pri:0, instance:tests.amazonTest.AmazonTest@604ed9f0]" name="setupTest" is-config="true" duration-ms="1" started-at="2018-04-29T16:21:00Z" finished-at="2018-04-29T16:21:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method status="PASS" signature="groupSetup()[pri:0, instance:tests.amazonTest.AmazonTest@6093dd95]" name="groupSetup" duration-ms="16736" started-at="2018-04-28T14:00:54Z" description="Test Description" finished-at="2018-04-28T14:01:10Z">
+        <test-method status="PASS" signature="groupSetup()[pri:0, instance:tests.amazonTest.AmazonTest@604ed9f0]" name="groupSetup" duration-ms="32483" started-at="2018-04-29T16:21:00Z" description="Test Description" finished-at="2018-04-29T16:21:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- groupSetup -->
-        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:tests.amazonTest.AmazonTest@6093dd95]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2018-04-28T14:01:10Z" finished-at="2018-04-28T14:01:10Z">
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:tests.amazonTest.AmazonTest@604ed9f0]" name="tearDownTest" is-config="true" duration-ms="0" started-at="2018-04-29T16:21:33Z" finished-at="2018-04-29T16:21:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.amazonTest.AmazonTest@6093dd95]" name="tearDownClass" is-config="true" duration-ms="1" started-at="2018-04-28T14:01:10Z" finished-at="2018-04-28T14:01:10Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.amazonTest.AmazonTest@604ed9f0]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2018-04-29T16:21:33Z" finished-at="2018-04-29T16:21:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
