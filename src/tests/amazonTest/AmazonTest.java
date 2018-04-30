@@ -1,5 +1,6 @@
 package tests.amazonTest;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.Assert;
@@ -67,16 +68,25 @@ public class AmazonTest {
 //		6. Assert that the first 5 results are between $20 - $100
 		checkPrices(results);
 //		6. Sort the first 5 results by price (Using Java)
+		sortPrice(results);
+		calcRanking(results); //lower the price, lower the rank score.
+		//at the end, lowest rank score gets recommended.
 //		7. Sort the first 5 results by Score/Rating (Using Java)
+		sortRatings(results);
+		calcRanking(results);
+		//higher rank gets lower rank score, lowest rank score gets recommended
+		
 //		8. Sort the first 5 results by price (Using Java) and Assert using testng / Junit that you have sorted the items correctly.
+		sortPrice(results);
+		
 //		9. Based on Score and Cost recommend the item a user should purchase
-
+		System.out.println("Recommended: "+results[findRecommended(results)].getName());
 		
 		
 		
-//		driver.close();
+		driver.close();
 	}
-	
+
 	@AfterMethod(alwaysRun = true)
 	public void tearDownTest()
 	{
@@ -97,12 +107,13 @@ public class AmazonTest {
 		r.setPrice(Double.parseDouble(entirePrice));
 		
 		/*I was unable to grab the star ratings, but these are some of the ways I've attempted to grab it
+		
 		r.setRating(element.findElement(By.className("a-icon-alt")).getAttribute("innerText"));
 		String stars = element.findElement(By.xpath("//span[@class='a-icon-alt']")).getAttribute("innerText");//
 		r.setName(element.findElement(By.xpath("//span[@class='a-icon-alt']")).getText());
 		String stars = element.findElement(By.cssSelector("span.a-icon-alt")).getAttribute("innerText");
 		
-		 I couldn't grab the actual ratings, but I didn't want this to keep me from completing the test, so I assigned the rating a random value from 1-5.
+		 Although I couldn't grab the actual ratings, I didn't want this to keep me from completing the test, so I assigned the rating a random value from 1-5.
  */
 		Random rand = new Random();
 		r.setRating(rand.nextInt(5)+1);
@@ -118,8 +129,52 @@ public class AmazonTest {
 	
 	void checkPrices(Result[] r) {
 		for (Result i : r) {
-			Assert.assertTrue(i.getPrice()>20 && i.getPrice()<100);
+			Assert.assertTrue(i.getPrice()>=20 && i.getPrice()<=100);
 		}
 	}
 	
+	static void sortPrice(Result[] r) {
+		for (int i = 0; i < r.length; i++) {
+			int minIndex = i;
+			for (int j = i + 1; j < r.length; j++){
+				if (r[j].getPrice() < r[minIndex].getPrice()) {
+					minIndex = j;
+				}
+			}
+				Result temp = r[minIndex];
+				r[minIndex] = r[i];
+				r[i] = temp;
+		}
+	}
+	void sortRatings(Result[] r) {
+		for (int i = 0; i < (r.length-1); i++) {
+			int maxIndex = i; 
+			for (int j = (i + 1); j < r.length; j++){
+				if (r[j].getRating() > r[maxIndex].getRating()) {
+					maxIndex = j;
+				}
+			}
+			Result temp = r[maxIndex];
+			r[maxIndex] = r[i];
+			r[i] = temp;	
+		}
+	}
+	
+	void calcRanking(Result[] r) {
+		for (int i = 0; i < r.length; i++){
+			r[i].setRank(r[i].getRank()+i);
+		}
+	}
+	
+	private int findRecommended(Result[] r) {
+		int recommendedIndex = 0;
+		for (int i = 0; i < r.length; i++){
+			System.out.println("Result #"+(i+1)+": "+r[i].getRank());
+			if (r[i].getRank()<r[recommendedIndex].getRank()) {
+				recommendedIndex = i;
+			}
+		}
+		return recommendedIndex;
+	}
 }
+
