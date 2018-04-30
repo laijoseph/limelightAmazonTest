@@ -67,19 +67,19 @@ public class AmazonTest {
 		
 //		6. Assert that the first 5 results are between $20 - $100
 		checkPrices(results);
-//		6. Sort the first 5 results by price (Using Java)
+//		7. Sort the first 5 results by price (Using Java)
 		sortPrice(results);
 		calcRanking(results); //lower the price, lower the rank score.
 		//at the end, lowest rank score gets recommended.
-//		7. Sort the first 5 results by Score/Rating (Using Java)
+//		8. Sort the first 5 results by Score/Rating (Using Java)
 		sortRatings(results);
 		calcRanking(results);
 		//higher rank gets lower rank score, lowest rank score gets recommended
 		
-//		8. Sort the first 5 results by price (Using Java) and Assert using testng / Junit that you have sorted the items correctly.
+//		9. Sort the first 5 results by price (Using Java) and Assert using testng / Junit that you have sorted the items correctly.
 		sortPrice(results);
 		
-//		9. Based on Score and Cost recommend the item a user should purchase
+//		10. Based on Score and Cost recommend the item a user should purchase
 		System.out.println("Recommended: "+results[findRecommended(results)].getName());
 		
 		
