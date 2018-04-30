@@ -1,11 +1,9 @@
 package tests.amazonTest;
 
-import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -53,8 +51,6 @@ public class AmazonTest {
 		SearchResultsPage.setMaximumPrice(driver).sendKeys("100");
 		SearchResultsPage.setMaximumPrice(driver).sendKeys(Keys.RETURN);
 		
-		
-		
 //		5. Output the Name, Price and Score/Rating (Stars) of the first 5 results
 		Result first = elementToResult(SearchResultsPage.firstResult(driver));
 		Result second = elementToResult(SearchResultsPage.secondResult(driver));
@@ -82,8 +78,6 @@ public class AmazonTest {
 //		10. Based on Score and Cost recommend the item a user should purchase
 		System.out.println("Recommended: "+results[findRecommended(results)].getName());
 		
-		
-		
 		driver.close();
 	}
 
@@ -95,7 +89,6 @@ public class AmazonTest {
 	@AfterClass(alwaysRun = true)
 	public void tearDownClass()
 	{
-
 	}
 	
 	Result elementToResult(WebElement element) {
